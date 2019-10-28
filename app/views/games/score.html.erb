@@ -1,0 +1,18 @@
+<h1>Results</h1>
+
+<div>
+  <% if @valid_word && @in_letters %>
+    <strong>Congratulations!</strong> <%= @guess.upcase %> is a valid word!
+  <% elsif @valid_word %>
+    Sorry but <strong><%= @guess %></strong> can't be built out of <%= @letters.chars.join(", ") %>
+  <% else %>
+    Sorry but <strong><%= @guess %></strong> does not seem to be a valid English word.
+  <% end %>
+</div>
+
+<div>
+  Current score: <%= @score %>
+</div>
+
+<%= link_to "Play again", new_path %>
+
